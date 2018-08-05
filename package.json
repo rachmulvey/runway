@@ -1,6 +1,6 @@
 {
   "name": "tyson-runway",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Qantas Style Guide",
   "main": "hello.js",
   "scripts": {
