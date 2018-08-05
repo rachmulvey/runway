@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qantas-group/runway.git"
+    "url": "git+https://github.com/tysonwolker/runway.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/qantas-group/runway/issues"
+    "url": "https://github.com/tysonwolker/runway/issues"
   },
-  "homepage": "https://github.com/qantas-group/runway#readme",
+  "homepage": "https://github.com/tysonwolker/runway#readme",
   "devDependencies": {
     "jest": "^22.2.1",
     "semantic-release": "^15.9.3"
