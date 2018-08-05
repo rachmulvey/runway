@@ -5,6 +5,7 @@
   "main": "hello.js",
   "scripts": {
     "main": "node hello.js",
+    "semantic-release": "semantic-release",
     "test": "jest"
   },
   "repository": {
@@ -19,6 +20,9 @@
   },
   "homepage": "https://github.com/tysonwolker/runway#readme",
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
+    "@semantic-release/git": "^7.0.1",
+    "@semantic-release/npm": "^5.0.1",
     "jest": "^22.2.1",
     "semantic-release": "^15.9.3"
   },
@@ -26,7 +30,15 @@
     "testEnvironment": "node"
   },
   "release": {
-    "verifyConditions": ["@semantic-release/changelog", "@semantic-release/npm", "@semantic-release/git"],
-    "prepare": ["@semantic-release/changelog", "@semantic-release/npm", "@semantic-release/git"]
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
