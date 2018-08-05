@@ -1,0 +1,23 @@
+{
+  "name": "tyson-runway",
+  "version": "0.0.0",
+  "description": "Qantas Style Guide",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qantas-group/runway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qantas-group/runway/issues"
+  },
+  "homepage": "https://github.com/qantas-group/runway#readme",
+  "devDependencies": {
+    "semantic-release": "^15.9.3"
+  }
+}
