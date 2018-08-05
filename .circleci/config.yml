@@ -45,10 +45,13 @@ jobs:
           at: ~/repo
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: npx semantic-release
+          command: npm publish
+      #- run:
+          #name: Publish package
+          #command: npx semantic-release
             
 workflows:
   version: 2
