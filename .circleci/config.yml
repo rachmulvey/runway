@@ -54,7 +54,7 @@ jobs:
           #command: npm publish
       - run:
           name: Publish package
-          command: npx semantic-release
+          command: npx semantic-release || true
             
 workflows:
   version: 2
