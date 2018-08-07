@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/tysonwolker/runway/compare/v0.0.6...v0.1.0) (2018-08-07)
+
+
+### Features
+
+* **hithere:** removed hithere.js ([eb9a962](https://github.com/tysonwolker/runway/commit/eb9a962))
+
 ## [0.0.6](https://github.com/tysonwolker/runway/compare/v0.0.5...v0.0.6) (2018-08-05)
 
 
