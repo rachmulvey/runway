@@ -18,10 +18,11 @@ const components = getComponents(COMPONENT_DIR);
 /**
  * Rollup
  */
-const babel = require('rollup-plugin-babel');
 const rollup = require('rollup');
-const nodeResolve = require('rollup-plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
 const commonjs = require('rollup-plugin-commonjs');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const typescript = require('rollup-plugin-typescript2');
 
 const OUTPUT_JS_TYPE = 'esm';
 const OUTPUT_DIR = './lib';
@@ -45,10 +46,13 @@ const inputOptions = entry => {
     external: ['react'],
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: ['node_modules/**', 'tsconfig.json']
       }),
+      commonjs(),
       nodeResolve(),
-      commonjs()
+      typescript({
+        typescript: require('typescript')
+      })
     ]
   };
 };
@@ -67,17 +71,21 @@ async function build(entrySrc, name, type) {
     const bundle = await rollup.rollup(inputOptions(entrySrc, type));
     await bundle.write(outputOptions(name, type));
     console.log(chalk.green(` ✅  Successuly packaged ${name} 📦`));
-  } catch (e) {
-    console.log(chalk.red(` ☠️  Failed to package ${name}`));
-    console.log(e);
+  } catch (error) {
+    console.log(
+      chalk.red(` ☠️  Failed to package ${name}`),
+      error
+    );
   }
 }
 
 async function generateModules() {
   for (let index = 0; index < components.length; index++) {
     let name = components[index].split('/').pop();
-    console.log(chalk.cyan(` ⚙️  Now building: ${name}`));
-    console.log(chalk.cyan(` 🗜  Module type: ${OUTPUT_JS_TYPE}`));
+    console.log(
+      chalk.cyan(` ⚙️  Now building: ${name}`),
+      chalk.cyan(` 🗜  Module type: ${OUTPUT_JS_TYPE}`)
+    );
     await build(components[index], components[index].split('/').pop(), OUTPUT_JS_TYPE);
   }
 }
