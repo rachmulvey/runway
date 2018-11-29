@@ -6,7 +6,9 @@
   "scripts": {
     "main": "node hello.js",
     "semantic-release": "semantic-release",
-    "test": "jest"
+    "test": "jest",
+    "precompile": "rimraf lib && mkdir lib",
+    "compile": "node ./rollup"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,18 @@
   },
   "homepage": "https://github.com/tysonwolker/runway#readme",
   "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
     "@semantic-release/changelog": "^3.0.0",
     "@semantic-release/git": "^7.0.1",
     "@semantic-release/npm": "^5.0.1",
     "jest": "^22.2.1",
+    "react": "^16.6.1",
+    "rollup": "^0.67.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "semantic-release": "^15.9.3"
   },
   "jest": {
