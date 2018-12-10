@@ -4,11 +4,10 @@
   "description": "Qantas Style Guide",
   "main": "hello.js",
   "scripts": {
-    "main": "node hello.js",
+    "build": "npm run clean && node ./rollup",
+    "clean": "rimraf lib && mkdir lib",
     "semantic-release": "semantic-release",
-    "test": "jest",
-    "precompile": "rimraf lib && mkdir lib",
-    "compile": "node ./rollup"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
