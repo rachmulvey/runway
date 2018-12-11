@@ -21,21 +21,37 @@
   },
   "homepage": "https://github.com/tysonwolker/runway#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
-    "@semantic-release/changelog": "^3.0.0",
-    "@semantic-release/git": "^7.0.1",
-    "@semantic-release/npm": "^5.0.1",
-    "jest": "^22.2.1",
-    "react": "^16.6.1",
-    "rollup": "^0.67.0",
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
+    "@semantic-release/npm": "^5.1.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^23.6.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "semantic-release": "^15.9.3"
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "semantic-release": "^15.12.4"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testEnvironment": "node"
   },
   "release": {
