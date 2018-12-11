@@ -1,3 +1,11 @@
+# [0.2.0](https://github.com/tysonwolker/runway/compare/v0.1.0...v0.2.0) (2018-12-11)
+
+
+### Features
+
+* **automation test:** added button automation tests and fixed ci ([3a88a1a](https://github.com/tysonwolker/runway/commit/3a88a1a))
+* **CI compilation:** added compilation of JS to CI ([043c349](https://github.com/tysonwolker/runway/commit/043c349))
+
 # [0.1.0](https://github.com/tysonwolker/runway/compare/v0.0.6...v0.1.0) (2018-08-07)
 
 
