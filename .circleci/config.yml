@@ -54,7 +54,7 @@ jobs:
           command: npm run semantic-release || true
 workflows:
   version: 2
-  test-deploy:
+  runway:
     jobs:
       - checkout:
           filters:
