@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/tysonwolker/runway/compare/v0.2.0...v0.3.0) (2018-12-12)
+
+
+### Features
+
+* **moved testSetup.js:** I moved testSetup.js to root level ([c89223e](https://github.com/tysonwolker/runway/commit/c89223e))
+
 # [0.2.0](https://github.com/tysonwolker/runway/compare/v0.1.0...v0.2.0) (2018-12-11)
 
 
