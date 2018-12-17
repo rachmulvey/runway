@@ -32,7 +32,9 @@ const OUTPUT_DIR = './lib';
 const chalk = require('chalk');
 
 console.log(
-  chalk.red.bgWhite(`🦄 🌈  Compiling Qantas Runway Components into optimized modules`),
+  chalk.red.bgWhite(
+    `🦄 🌈  Compiling Qantas Runway Components into optimized modules`
+  ),
   '\n'
 );
 
@@ -78,7 +80,11 @@ async function generateModules() {
     let name = components[index].split('/').pop();
     console.log(chalk.cyan(` ⚙️  Now building: ${name}`));
     console.log(chalk.cyan(` 🗜  Module type: ${OUTPUT_JS_TYPE}`));
-    await build(components[index], components[index].split('/').pop(), OUTPUT_JS_TYPE);
+    await build(
+      components[index],
+      components[index].split('/').pop(),
+      OUTPUT_JS_TYPE
+    );
   }
 }
 

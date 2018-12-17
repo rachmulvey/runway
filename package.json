@@ -7,7 +7,9 @@
     "build": "npm run clean && node ./rollup",
     "clean": "rimraf lib && mkdir lib",
     "semantic-release": "semantic-release",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -22,30 +24,45 @@
   "homepage": "https://github.com/tysonwolker/runway#readme",
   "devDependencies": {
     "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-react": "^7.0.0",
     "@semantic-release/changelog": "^3.0.1",
     "@semantic-release/git": "^7.0.5",
     "@semantic-release/npm": "^5.1.1",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "babel-preset-airbnb": "^3.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "lint-staged": "^8.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.15.3",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "semantic-release": "^15.12.4"
   },
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
   "babel": {
     "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
+      "airbnb"
     ]
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
@@ -54,6 +71,16 @@
     ],
     "testEnvironment": "node"
   },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
   "release": {
     "verifyConditions": [
       "@semantic-release/changelog",
