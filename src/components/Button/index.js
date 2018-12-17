@@ -1,15 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const Button = ({ className, label, ...buttonProps }) => (
+const Button = ({ className, label, type, ...buttonProps }) => (
   <div className={className}>
-    <button {...buttonProps}>
-      {label}
-    </button>
+    <button {...buttonProps}>{label}</button>
   </div>
 );
 
 Button.defaultProps = {
-  label: "button"
+  label: 'button'
 };
 
 export default Button;
