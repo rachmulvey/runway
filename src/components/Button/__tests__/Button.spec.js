@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import Button from '..';
+import { mount } from 'enzyme';
 
 describe('Button', () => {
   it('should render correctly in "debug" mode', () => {
-    const component = shallow(<Button debug />);
+    const component = mount(<Button debug="true" />);
 
     expect(component).toMatchSnapshot();
   });
