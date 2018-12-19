@@ -3,7 +3,9 @@
 exports[`Button should render correctly in "debug" mode 1`] = `
 <div>
   <button
+    className="button"
     debug={true}
+    type="button"
   >
     button
   </button>

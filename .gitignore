@@ -63,4 +63,11 @@ typings/
 # Mac DS_Store files
 .DS_Store
 
+# Build output
 /lib
+
+# Rollup bundle visualizer
+stats.html
+
+# Postcss modules generated json
+*.scss.json

@@ -8,8 +8,10 @@
     "clean": "rimraf lib && mkdir lib",
     "semantic-release": "semantic-release",
     "test": "jest",
+    "test:update": "jest -u",
     "lint": "eslint src",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "extract-css": "npm run build -extract"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "@semantic-release/changelog": "^3.0.1",
     "@semantic-release/git": "^7.0.5",
     "@semantic-release/npm": "^5.1.1",
+    "autoprefixer": "^9.4.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -42,15 +45,22 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
+    "node-sass": "^4.11.0",
+    "postcss-modules": "^1.4.1",
+    "postcss-url": "^8.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.15.3",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "semantic-release": "^15.12.4"
+    "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-visualizer": "^0.9.2",
+    "semantic-release": "^15.12.4",
+    "yargs": "^12.0.5"
   },
   "peerDependencies": {
     "react": "^16.6.3",
@@ -69,7 +79,10 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
@@ -79,7 +92,8 @@
     ]
   },
   "pre-commit": [
-    "lint-staged"
+    "lint-staged",
+    "lint"
   ],
   "release": {
     "verifyConditions": [

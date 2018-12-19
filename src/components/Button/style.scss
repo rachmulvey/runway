@@ -1,0 +1,59 @@
+@import '../../style/_variables.scss';
+
+$width: 100%;
+$height: 50px;
+$font-size: 16px;
+$border-radius: 4px;
+$click-offset: 1px;
+
+.button {
+  font-family: 'Ciutadella', sans-serif;
+  font-size: $font-size;
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  padding: 14px 24px 15px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.56;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:active {
+    transform: translate($click-offset, $click-offset);
+  }
+}
+
+.hollow {
+  background-color: transparent;
+  border-width: 0;
+  box-shadow: 0 0 0 2px $color-qantas-red inset;
+  color: $color-qantas-red;
+  font-weight: normal;
+
+  &:hover {
+    box-shadow: 0 0 0 2px $color-dark-red inset;
+    color: $color-dark-red;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px $color-focus-red inset;
+    color: $color-focus-red;
+  }
+}
+
+.solid {
+  border-width: 0;
+  background-color: $color-qantas-red;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-dark-red;
+  }
+
+  &:active {
+    background-color: $color-focus-red;
+  }
+}
