@@ -41,7 +41,7 @@ console.log(
 /**
  * Build
  */
-const externals = ['react', 'prop-types', 'emotion'];
+const externals = ['react', 'react-dom', 'prop-types', 'emotion'];
 const makeExternalPredicate = externalsArr => {
   if (externalsArr.length === 0) {
     return () => false;
@@ -55,10 +55,16 @@ const inputOptions = entry => ({
   external: makeExternalPredicate(externals),
   plugins: [
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      runtimeHelpers: true
     }),
     nodeResolve(),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'react-is': ['isForwardRef', 'isValidElementType']
+      }
+    }),
     visualizer()
   ]
 });
